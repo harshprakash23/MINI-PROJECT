@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnHub</title>
+  <style>
+    .header {
+    background-color: #faf9f9;
+    color: rgb(103, 53, 240);
+    padding: 10px;
+    z-index: 100;
+  }
+
+  marquee {
+    font-size: 18px;
+    background-color: #faf9f9;
+    font-weight: bold;
+    padding: 5px;
+  }
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    .nav-bar {
+      z-index: 100;
+      display: flex;
+      flex-direction: row;
+      height: 11vh;
+      min-width: 100%;
+      justify-content: space-between;
+      background-color: white;
+      position: fixed;
+      box-shadow: 0px 0px 30px -10px rgba(0, 0, 0, 0.5);
+    }
+    
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      padding: 24px;
+    }
+
+
+    .button-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-right: 3%;
+
+    }
+
+    .text {
+      padding: 20px;
+      color: rgb(110, 110, 110);
+    }
+
+    #shopping-cart {
+      width: 22px;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+
+    .log-buttons {
+      padding: 10px;
+      margin-left: 10px;
+      background-color: white;
+      color: black;
+      font-weight: 700;
+      padding-left: 20px;
+      padding-right: 20px;
+      border: solid;
+      text-decoration: none;
+      transition: all 0.15s ease-in;
+      border-color: black;
+    }
+
+    .log-buttons:hover {
+      background-color: rgb(110, 110, 110);
+      border-color: rgb(110, 110, 110);
+      color: white;
+      text-decoration: none;
+    }
+
+    .log-buttons:active {
+      background-color: rgb(110, 110, 110);
+      border-color: rgb(110, 110, 110);
+      text-decoration: none;
+    }
+
+    .reg-buttons {
+      padding: 10px;
+      margin-left: 10px;
+      background-color: rgb(218, 0, 0);
+      color: white;
+      font-weight: 700;
+      padding-left: 20px;
+      padding-right: 20px;
+      border: solid;
+      text-decoration: none;
+      transition: all 0.15s ease-in;
+      border-color: rgb(218, 0, 0);
+    }
+
+    .reg-buttons:hover {
+      background-color: white;
+      border-color: rgb(218, 0, 0);
+      color: rgb(218, 0, 0);
+      text-decoration: none;
+    }
+
+    .reg-buttons:active {
+      background-color: rgb(77, 77, 77);
+      border-color: rgb(77, 77, 77);
+      text-decoration: none;
+    }
+
+    #page1 {
+      display: flex;
+      align-items: center;
+      padding: 2vh;
+      min-height: 80vh;
+      background-color: white;
+      padding-bottom: 10vh;
+      padding-top: 10vh;
+      min-width: 90vw;
+      background-image: url(images/bg.jpg);
+      background-position: center;
+      background-size: cover;
+    }
+
+    #page1 a {
+      text-decoration: none;
+      color: white;
+    }
+
+    #page1 button {
+      background-color: rgb(103, 53, 240);
+      color: white;
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 20px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease-out;
+    }
+
+    #page1 button:hover {
+      box-shadow: 3px 3px 43px -15px rgba(0, 0, 0, 0.75);
+      transform: scale(105%);
+    }
+
+    #pg1-text {
+      font-size: 40px;
+      padding-left: 7vw;
+    }
+
+    #pg1-text h1 {
+      margin: -1px 0px;
+    }
+
+    #line1 {
+      color: rgb(81, 81, 81);
+    }
+
+    #line3 {
+      color: rgb(77, 0, 128);
+    }
+
+    #pg1-img {
+      width: 200px;
+      height: auto;
+      padding-left: 8vw;
+    }
+
+    #page2 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 5vh;
+      margin-bottom: -50px;
+      color: rgb(54, 43, 58);
+      min-height: 70vh;
+      padding-left: 2vw;
+      padding-right: 2vw;
+      background-color: white;
+    }
+
+    #cats-text {
+      font-size: 30px;
+      color: rgb(0, 0, 0);
+      font-weight: 900;
+    }
+
+    .categories {
+      width: 95vw;
+      min-height: 80vh;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: flex-start;
+    }
+
+    .category {
+      width: 20vw;
+      height: 24vh;
+      background-color: white;
+      margin: 20px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      transition: all 1s ease-in-out;
+    }
+
+    .category span {
+      color: white;
+      font-weight: 900;
+      margin: 20px;
+      font-size: 20px;
+      margin-top: 60px;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .category button {
+      width: 150px;
+      height: 40px;
+      cursor: pointer;
+      background-color: rgb(218, 0, 0);
+      color: white;
+      border: none;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 10px;
+      transform: scale(0);
+
+      transition: all 0.6s ease-in-out;
+    }
+
+    .category:hover {
+      transform: scale(1.01);
+    }
+
+    .category:hover button {
+      transform: scale(1);
+    }
+
+    .category:hover span {
+      margin-top: 0;
+    }
+
+    #page3 {
+      min-height: 100vh;
+      padding-top: 10vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: rgb(255, 253, 190);
+    }
+
+    .quotes {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 80vw;
+    }
+
+    .quotation {
+      width: 60vw;
+      height: 40vh;
+      margin: 50px;
+    }
+
+    .q-img {
+      display: flex;
+      justify-content: center;
+      margin-top: 15px;
+    }
+
+    .q-img img {
+      width: 70px;
+      padding: 20px;
+    }
+
+    .review {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      margin-left: 30px;
+    }
+
+    .review img {
+      width: 100px;
+      margin-top: -20px;
+      background: white;
+    }
+
+    .rev-name {
+      font-weight: 700;
+      color: rgb(77, 0, 128);
+      padding: 20px;
+    }
+
+    #page4 {
+      min-height: 100vh;
+      width: 100%;
+      background-color: white;
+      padding-top: 2vh;
+      padding-bottom: 20vh;
+    }
+
+    #page4 #course-text {
+      font-size: 40px;
+      font-weight: 900;
+      text-align: center;
+      padding-top: 20px;
+    }
+
+    .all-courses {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .course {
+      height: 550px;
+      width: 400px;
+      margin: 20px;
+      border-radius: 20px;
+    }
+
+    .course img {
+      width: 100%;
+      border-radius: 20px;
+    }
+
+    .course-details p {
+      font-size: 25px;
+    }
+
+    .course-details h1 {
+      font-size: 35px;
+    }
+
+    .course-details button {
+      height: 50px;
+      width: 90px;
+      border-radius: 40px;
+      border: none;
+      background-color: rgb(77, 0, 128);
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .course-details button:hover {
+      background-color: rgb(218, 0, 0);
+    }
+
+    .footer {
+      background-color: black;
+      height: 120px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-text {
+      color: white;
+      font-weight: 700;
+      font-size: 20px;
+      padding: 30px;
+    }
+
+    .author {
+      color: white;
+      font-weight: 700;
+      font-size: 20px;
+      padding-right: 30px;
+    }
+    .text a{
+      text-decoration: none;
+      color: rgb(110, 110, 110);  
+    }
+
+
+  #page5 {
+    min-height: 100vh;
+    padding-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #faf9f9;
+  }
+
+  #page5 h1 {
+    font-size: 40px;
+    font-weight: 900;
+    text-align: center;
+    padding-top: 20px;
+    color: rgb(103, 53, 240);
+  }
+
+  .contact-info {
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .contact-info p {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: rgb(110, 110, 110);
+  }
+
+  .contact-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .contact-info li {
+    font-size: 18px;
+    color: rgb(110, 110, 110);
+  }
+
+  .feedback-form {
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  .feedback-form form {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    font-size: 18px;
+    color: rgb(110, 110, 110);
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  .form-group textarea {
+    height: 150px;
+  }
+
+  .feedback-form button {
+    background-color: rgb(103, 53, 240);
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .feedback-form button:hover {
+    background-color: rgb(77, 0, 128);
+  }
+
+</style>
+
+ 
+</head>
+
+<body>
+  <div class="header">
+    <marquee behavior="scroll" direction="left">Word of the Day: Serenity</marquee>
+  </div>
+  <div class="nav-bar">
+    <div class="logo-container">
+      <a href="index.html"><img src="images/logo-company.jpg" style="cursor: pointer; width: 80px;"></a>
+      <div class="text">
+        <span style="cursor: pointer;">
+          <a href="#page1">Home</a>
+        </span>
+      </div>
+      <div class="text">
+        <span style="cursor: pointer;">
+          <a href="#page2">Explore</a>
+        </span>
+      </div>
+      <div class="text">
+        <span style="cursor: pointer;">
+          <a href="assement.html">Assessment</a>
+        </span>
+      </div>
+      <div class="text">
+        <span style="cursor: pointer;">
+          <a href="#page5">Feedback and Contact Us</a>
+        </span>
+      </div>
+    </div>
+    <div class="button-container">
+      <div class="shopping-cart">
+        <img id="shopping-cart" src="images/shopping-cart-icon.jpg">
+      </div>
+      <a href="login.html" class="log-buttons">Log in</a>
+      <a href="register.html" class="reg-buttons">Register</a>
+    </div>
+  </div>
+  <div class="content">
+    <div id="page1">
+      <div id="pg1-text">
+        <h1 id="line1">Discover</h1>
+        <h1 id="line2"> South Asia's</h1>
+        <h1 id="line3">Rich Tapestry</h1>
+        <a href="#page2"><Button>Get Started</Button></a>
+      </div>
+      <div id="pg1-img"><img src="images/main-2-new.jpg"></div>
+    </div>
+
+    <div id="page2">
+      <div id="cats-text">
+        <h2>Explore</h2>
+      </div>
+      <div class="categories">
+        <div class="category reveal" style="background-image: url(images/map2.jpeg);
+        background-position: center;
+        background-size: contain;">
+          <span>Maps</span>
+          <a href="map.html"><button>View</button></a>
+        </div>
+        <div class="category reveal" style="background-image: url(images/flag2.jpeg);
+        background-position: center;
+        background-size: contain;">
+        <span>Flag</span>
+        <a href="flag.html"><button>View</button></a>
+        </div>
+        <div class="category reveal" style="background-image: url(images/capitals.jpeg);
+        background-position: center;
+        background-size: contain;">
+          <span>Capital</span>
+          <a href="capital.html"><button>View</button></a>
+        </div>
+        <div class="category reveal" style="background-image: url(images/leaders.jpeg);
+        background-position: center;
+        background-size: contain;">
+          <span>Leaders</span>
+          <a href="leaders.html"><button>View</button></a>
+        </div>
+        
+        <div class="category reveal" style="background-image: url(images/tourist.jpeg);
+        background-position: center;
+        background-size: contain;">
+          <span>Tourist Spots</span>
+          <a href="tourist.html"><button>View</button></a>
+        </div>
+      </div>
+    </div>
+
+    <div id="page3">
+      <div class="testimonial">
+        <h1>What Say Our Students</h1>
+      </div>
+      <div class="quotes">
+        <div class="quotation">
+          <div class="q-img"><img src="images/quotes.jpg"></div>
+          <div class="review"><span>"I enrolled in a course here and was pleasantly surprised. The content was
+              well-structured and easy to follow. The instructor was knowledgeable and responsive. Definitely worth
+              it!"</span><span class="rev-name">Rahul Kumar</span>
+            <img src="images/5star.jpg">
+          </div>
+        </div>
+        <div class="quotation">
+          <div class="q-img"><img src="images/quotes.jpg"></div>
+          <div class="review"><span>"Great courses and user-friendly interface. The content was comprehensive with
+              practical exercises. Excellent support team. Will enroll in more courses!"</span><span
+              class="rev-name">Archita
+              Oberoy</span>
+            <img src="images/star.jpg">
+          </div>
+        </div>
+        <div class="quotation">
+          <div class="q-img"><img src="images/quotes.jpg"></div>
+          <div class="review"><span>"Took a course here and was impressed. Top-notch content and expert instructors.
+              Flexible learning and easy to revisit lessons. Highly recommended!"</span><span class="rev-name">Abhishek
+              Raj</span>
+            <img src="images/5star.jpg">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="page4">
+      <h1 id="course-text">Popular Courses</h1>
+      <div class="all-courses">
+        <div class="course">
+          <img src="images/pic1.jpg">
+          <div class="course-details">
+            <h1>Google learning</h1>
+            <p>Join the Google learning for Google search engine options, other google tools uses.</p>
+            <button>Register</button>
+          </div>
+        </div>
+        <div class="course">
+          <img src="images/pic3.jpg">
+          <div class="course-details">
+            <h1>Creative Bootcamp</h1>
+            <p>Unleash your creativity with the Creative Minds workshop. Don't miss out!</p>
+            <button>Register</button>
+          </div>
+        </div>
+        <div class="course">
+          <img src="images/pic2.jpg">
+          <div class="course-details">
+            <h1>Buisness Bootcamp</h1>
+            <p>Transform into a Business Guru at our intensive bootcamp. Limited spots left!</p>
+            <button>Register</button>
+          </div>
+        </div>
+        <div class="course">
+          <img src="images/pic4.jpg">
+          <div class="course-details">
+            <h1>Wellness Camp</h1>
+            <p>Join the Wellness Warriors for a rejuvenating retreat. Book your spot now!</p>
+            <button>Register</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="page5">
+      <h1>Feedback and Contact Us</h1>
+      <div class="contact-info">
+          <p>Contact us via email or phone:</p>
+          <ul>
+              <li>Email: info@learnhub.com</li>
+              <li>Phone: +91 8997366790</li>
+          </ul>
+      </div>
+      <div class="feedback-form">
+          <form id="feedbackForm" action="#" method="post">
+              <div class="form-group">
+                  <label for="name">Name:</label>
+                  <input type="text" id="name" name="name" required>
+              </div>
+              <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                  <label for="message">Message:</label>
+                  <textarea id="message" name="message" required></textarea>
+              </div>
+              <button type="submit" id="submitBtn">Submit</button>
+          </form>
+      </div>
+  </div>
+  
+  <div class="footer">
+      <div class="footer-text">
+          Top companies choose LearnHub Business to build in-demand career skills.
+      </div>
+      <div class="author">
+          Made by : Harsh Prakash
+      </div>
+  </div>
+  <script>
+      document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent the default form submission
+  
+          if (!validateFeedbackForm()) {
+              return; // Stop here if validation fails
+          }
+  
+          const name = document.getElementById('name').value.trim();
+          const email = document.getElementById('email').value.trim();
+          const message = document.getElementById('message').value.trim();
+  
+          console.log('Name:', name);
+          console.log('Email:', email);
+          console.log('Message:', message);
+  
+          alert('Thank you for your feedback!');
+  
+          this.reset(); // Reset the form after submission
+      });
+  
+      function validateFeedbackForm() {
+          const name = document.getElementById('name').value.trim();
+          const email = document.getElementById('email').value.trim();
+          const message = document.getElementById('message').value.trim();
+  
+          if (name === '' || email === '' || message === '') {
+              alert('Please fill in all fields.');
+              return false;
+          }
+  
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailPattern.test(email)) {
+              alert('Please enter a valid email address.');
+              return false;
+          }
+  
+          return true;
+      }
+  </script>
+  
+    </script>
+    
+
+</body>
+
+</html>

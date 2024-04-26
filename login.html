@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnHub</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+
+    }
+
+    .nav-bar {
+      z-index: 100;
+      display: flex;
+      flex-direction: row;
+      height: 11vh;
+      min-width: 100%;
+      justify-content: space-between;
+      background-color: white;
+      position: fixed;
+      top: 0px;
+      box-shadow: 0px 0px 30px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      padding: 24px;
+    }
+
+
+    .button-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-right: 3%;
+
+    }
+
+    .text {
+      padding: 20px;
+      color: rgb(110, 110, 110);
+    }
+
+    #shopping-cart {
+      width: 22px;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+
+    .log-buttons {
+      padding: 10px;
+      margin-left: 10px;
+      background-color: white;
+      color: black;
+      font-weight: 700;
+      padding-left: 20px;
+      padding-right: 20px;
+      border: solid;
+      text-decoration: none;
+      transition: all 0.15s ease-in;
+      border-color: black;
+    }
+
+    .log-buttons:hover {
+      background-color: rgb(110, 110, 110);
+      border-color: rgb(110, 110, 110);
+      color: white;
+      text-decoration: none;
+    }
+
+    .log-buttons:active {
+      background-color: rgb(110, 110, 110);
+      border-color: rgb(110, 110, 110);
+      text-decoration: none;
+    }
+
+    .reg-buttons {
+      padding: 10px;
+      margin-left: 10px;
+      background-color: rgb(218, 0, 0);
+      color: white;
+      font-weight: 700;
+      padding-left: 20px;
+      padding-right: 20px;
+      border: solid;
+      text-decoration: none;
+      transition: all 0.15s ease-in;
+      border-color: rgb(218, 0, 0);
+    }
+
+    .reg-buttons:hover {
+      background-color: white;
+      border-color: rgb(218, 0, 0);
+      color: rgb(218, 0, 0);
+      text-decoration: none;
+    }
+
+    .reg-buttons:active {
+      background-color: rgb(77, 77, 77);
+      border-color: rgb(77, 77, 77);
+      text-decoration: none;
+    }
+
+
+    .main-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+      margin-top: 150px;
+    }
+
+    .google-login {
+      display: flex;
+      align-items: center;
+      width: 350px;
+      height: 50px;
+      background-color: white;
+      border-width: 1px;
+      cursor: pointer;
+    }
+
+    .main-content {
+      padding: 5px;
+      font-weight: 800;
+    }
+
+    .input {
+      width: 326px;
+      height: 50px;
+      background-color: white;
+      border-width: 1px;
+    }
+
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 10px;
+    }
+
+    .input {
+      margin: 5px;
+      padding-left: 20px;
+    }
+
+    .input::placeholder {
+      font-weight: 700;
+    }
+
+    .login-button {
+      width: 350px;
+      height: 50px;
+      border: none;
+      background-color: rgb(164, 53, 240);
+      color: white;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.2s ease-in;
+    }
+
+    .login-button:hover {
+      background-color: rgb(218, 0, 0);
+      box-shadow: 0px 0px 30px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    .forget-password {
+      padding-top: 20px;
+      font-weight: 700;
+      color: rgb(103, 53, 240);
+      padding-bottom: 59px;
+      margin-left: 115px;
+    }
+
+    .forget-password u {
+      cursor: pointer;
+    }
+
+    .footer {
+      background-color: black;
+      height: 120px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-text {
+      color: white;
+      font-weight: 700;
+      font-size: 20px;
+      padding: 30px;
+    }
+
+    .author {
+      color: white;
+      font-weight: 700;
+      font-size: 20px;
+      padding-right: 30px;
+    }
+    .text a{
+      text-decoration: none;
+      color: rgb(110, 110, 110);  
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav-bar">
+    <div class="logo-container">
+      <a href="index.html"><img src="images/logo-company.jpg" style="cursor: pointer; width: 80px;"></a>
+      <div class="text"><span style="cursor: pointer;">
+          <a href="index.html">Home</a>
+        </span></div>
+      <div class="text"><span style="cursor: pointer;">Explore</span></div>
+      <div class="text"><span style="cursor: pointer;">Assessment</span></div>
+      <div class="text"><span style="cursor: pointer;">Feedback and Contact Us</span></div>
+    </div>
+    <div class="button-container">
+      <div class="shopping-cart">
+        <img id="shopping-cart" src="images/shopping-cart-icon.jpg">
+      </div>
+      <a href="login.html" class="log-buttons">Log in</a>
+      <a href="register.html" class="reg-buttons">Register</a>
+    </div>
+  </div>
+
+  <div class="main-body">
+    <div class="main-content">Log in to your LearnHub account</div>
+    <div class="main-content"><button class="google-login"><img src="images/google-logo.jpg"
+          style="width: 35px; padding-right: 12px; padding-left: 5px;">
+        Continue with Google</button></div>
+    <div class="main-content"><button class="google-login"><img src="images/facebook-logo.jpg"
+          style="width: 35px; padding-right: 12px; padding-left: 5px;">
+        Continue with Facebook</button></div>
+    <div class="main-content"><button class="google-login"><img src="images/apple-logo.jpg"
+          style="width: 30px; padding-right: 12px; padding-left: 5px;">
+        Continue with Apple</button></div>
+    <form>
+      <div class="input-container">
+        <input type="text" class="input" placeholder="Email">
+        <input type="text" class="input  " placeholder="Password">
+      </div>
+      <button class="login-button">Log in</button>
+      <div class="forget-password"><u>Forgot Password</u></div>
+    </form>
+  </div>
+
+  <div class="footer">
+    <div class="footer-text">
+      Top companies choose LearnHub Business to build in-demand career skills.
+    </div>
+    <div class="author">
+      Made by : Harsh Prakash
+    </div>
+  </div>
+  <script src="login-script.js"></script>
+</body>
+
+
+</html>
